@@ -2,9 +2,8 @@
 <html lang="en">
 
 <head>
-    <title></title>
-    <!--CONVERRIT HREF STILOS Y JS EN RUTAS ABSOLUTAS EN LARAVEL-->
-    @include('theme.backoffice.layouts.includes.head')
+    <title>@yield('title')</title>
+        @include('theme.backoffice.layouts.includes.head')
 </head>
 
 <body>
@@ -15,7 +14,7 @@
     <!-- START HEADER -->
     @include('theme.backoffice.layouts.includes.header')
     <!-- END HEADER -->
-    
+
     <!-- START MAIN -->
     <div id="main">
         <!-- START WRAPPER -->
@@ -27,7 +26,8 @@
                 <!--start container-->
                 <div class="container">
 
-
+                    @yield('content')
+                    
                 </div>
                 <!--end container-->
             </section>            
