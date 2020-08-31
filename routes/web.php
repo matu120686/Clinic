@@ -1,20 +1,33 @@
 <?php
-Route::get('/', function () {
-    return view('welcome');
-});
+
+use GuzzleHttp\Middleware;
 
 Auth::routes(['verify' => true]);
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//BACKOFFICE
+//Route::get('/demo', 'RoleController@index')->name('demo');
 
-Route::get('/admin',function(){
-    return view('theme.backoffice.layouts.admin');
+
+
+
+Route::group(['middleware' => ['auth' ], 'as' => 'backoffice.'], function(){
+
+    //Route::get('/role', 'RoleController@index')->name('role.index');
+
+    Route::resource('role', 'RoleController');
+
 });
-Route::get('/demo',function(){
+
+
+
+
+
+/*Route::get('demo',function(){
     return view('theme.backoffice.pages.demo');
-});
+});*/
+//FRONTOFFICE
+

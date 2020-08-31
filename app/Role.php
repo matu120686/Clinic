@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     //
-    protected $filable = [
+    protected $fillable = [
 
-        'name','slug','description'
+        'name','description','slug'
     ];
 
     //RELACIONES
@@ -21,10 +21,21 @@ class Role extends Model
 
     public function users(){
         
-        $this->belongsToMany('App\User')->withTimestamps();
+        return $this->belongsToMany('App\User')->withTimestamps();
     }
 
     //ALMACENAMIENTO
+
+    public function store($request){
+        
+        $slug = str_slug($request->name,' - ');
+
+        return self::create($request->all() + [
+            'slug' => $slug, 
+        ] );
+       
+
+    }
 
     //VALIDACION
 

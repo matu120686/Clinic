@@ -3,10 +3,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
 
-    <link href="css//materialize.css" type="text/css" rel="stylesheet">
-    <link href="css//style.css" type="text/css" rel="stylesheet">
-    <link href="css/custom/custom.css" type="text/css" rel="stylesheet">
-    <link href="vendors/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet">
-    <link href="vendors/flag-icon/css/flag-icon.min.css" type="text/css" rel="stylesheet">
+    <link href="/assets/css/materialize.css" type="text/css" rel="stylesheet">
+    <link href="/assets/css/style.css" type="text/css" rel="stylesheet">
+    <link href="/assets/css/custom/custom.css" type="text/css" rel="stylesheet">
+    <link href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet">
+    <link href="/assets/vendors/flag-icon/css/flag-icon.min.css" type="text/css" rel="stylesheet">
 
     @yield('head')

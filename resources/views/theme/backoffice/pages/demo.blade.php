@@ -6,7 +6,7 @@
 
 @endsection
 @section('content')    
-    <h5>Hola desde demo </h5>
+    <h6>Contenido de la App</h6>
 @endsection
 
 @section('foot')    

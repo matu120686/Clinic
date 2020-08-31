@@ -4,9 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Role;
 use Illuminate\Http\Request;
+use App\Http\Requests\Role\StoreRequest;
 
 class RoleController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    /*public function __construct()
+    {
+        $this->middleware('auth');
+    }*/
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +26,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        return view('theme.backoffice.pages.demo');
     }
 
     /**
@@ -24,18 +36,22 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        
+        return view('theme.backoffice.pages.role.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage. 
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request, Role $role)
     {
-        //
+         $role = $role->store($request);      
+
+         return view('theme.backoffice.pages.role.create');
+        //dd($request);
     }
 
     /**
