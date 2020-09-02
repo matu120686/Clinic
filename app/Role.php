@@ -37,6 +37,17 @@ class Role extends Model
 
     }
 
+    public function my_update($request){
+        
+        $slug = str_slug($request->name,' - ');
+
+         self::update($request->all() + [
+            'slug' => $slug, 
+        ]);
+       
+
+    }
+
     //VALIDACION
 
     //RECUPERACION DE INFORMACION 

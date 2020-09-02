@@ -23,7 +23,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#" class="grey-text text-darken-1">
+                            <a href="{{route('logout')}}" class="grey-text text-darken-1">
                                 <i class="material-icons">keyboard_tab</i> Logout</a>
                         </li>
                     </ul>
@@ -34,6 +34,12 @@
         </li>
         <li class="no-padding">
             <ul class="collapsible" data-collapsible="accordion">
+                <li class="bold">
+                <a href="{{route('backoffice.role.index')}}" class="waves-effect waves-cyan">
+                        <i class="material-icons">pie_chart_outlined</i>
+                        <span class="nav-text">Panel de administración</span>
+                    </a>
+                </li>
                 <li class="bold">
                     <a href="index.html" class="waves-effect waves-cyan">
                         <i class="material-icons">pie_chart_outlined</i>
