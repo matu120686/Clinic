@@ -110,7 +110,12 @@ class RoleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Role $role)
-    {
-        //
+    {    
+            $role->delete();
+            alert('Title','Lorem Lorem Lorem', 'success')->showConfirmButton('Ok');
+            return redirect()->route('backoffice.role.index');
+
+            
+    
     }
 }

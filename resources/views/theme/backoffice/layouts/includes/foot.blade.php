@@ -8,4 +8,9 @@
     
     <script src="/assets/js/custom-script.js"></script>
 
+    
+    <script src="/vendor/sweetalert/sweetalert.all.js"></script>
+
+    @include('sweetalert::alert')
+
     @yield('foot')

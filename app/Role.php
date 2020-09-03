@@ -29,6 +29,7 @@ class Role extends Model
     public function store($request){
         
         $slug = str_slug($request->name,' - ');
+        alert('Exito','Se registró correctamente', 'success')->showConfirmButton('Ok');       
 
         return self::create($request->all() + [
             'slug' => $slug, 
@@ -44,8 +45,9 @@ class Role extends Model
          self::update($request->all() + [
             'slug' => $slug, 
         ]);
+        alert('Exito','El rol ha actualizado', 'success')->showConfirmButton('Ok');
        
-
+ 
     }
 
     //VALIDACION

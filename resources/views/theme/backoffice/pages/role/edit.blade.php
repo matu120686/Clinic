@@ -7,20 +7,21 @@
 @endsection
 @section('content')
 
+    <div class="section">
+        <p class="caption">Edición del Rol</p>
+        <div class="divider"></div>
         <div class="section">
-            <p class="caption">Rellene el formulario para registrar un Rol</p>
-            <div class="divider"></div>
-            <div id="basic-form" class="section">
-                <div class="row">
-                    <div class="col s12 m8 offset-m2">
-                        <div class="card-panel">
-                            <h4 class="header2">Crear Rol</h4>
+            <div class="row">
+                <div class="col s12 m8 offset-m2">
+                    <div class="card">
+                        <div class="card-content">                                
+                            <span class="card-title">Crear Rol</span>
                             <div class="row">
                                 <form  class="col s12" method="POST" action="{{route('backoffice.role.update',$role)}}">
 
                                     {{ csrf_field() }}
                                     {{method_field('PUT')}}
-
+                                
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <input id="name" type="text" name="name" value="{{$role->name}}">
@@ -32,7 +33,7 @@
                                                 @endif
                                         </div>
                                     </div>      
-
+                                
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <textarea id="description" class="materialize-textarea" name="description">{{$role->description}}</textarea>
@@ -56,10 +57,11 @@
                                 </form>
                             </div>
                         </div>
-                    </div>                
-                </div> 
-            </div>
+                    </div>
+                </div>                
+            </div> 
         </div>
+    </div>
 
 @endsection
 
