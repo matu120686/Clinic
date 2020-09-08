@@ -3,6 +3,17 @@
 @section('title','Página demo')
     
 @section('head')
+@section('breadcrumbs')  
+{{--<li><a href=""></a></li>--}} 
+<li><a href="{{route ('backoffice.role.index')}}">Roles del Sistema</a></li> 
+<li>{{$role->name}}</li>
+@endsection
+
+@section('dropdown_settings') 
+{{--<li><a href="{{route ('backoffice.role.index')}}">Roles del Sistema</a></li> --}}
+<li><a href="{{route ('backoffice.role.create')}}" class="grey-text text-darken-2">Crear Rol</a></li>     
+
+@endsection
 
 @endsection
 @section('content')

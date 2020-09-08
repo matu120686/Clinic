@@ -6,6 +6,17 @@
 
 @endsection
 
+@section('breadcrumbs')  
+{{--<li><a href=""></a></li>--}} 
+<li><a href="{{route ('backoffice.role.index')}}">Roles del Sistema</a></li> 
+@endsection
+
+@section('dropdown_settings')
+{{--<li><a href="{{route ('backoffice.role.index')}}">Roles del Sistema</a></li> --}}
+<li><a href="{{route ('backoffice.role.create')}}" class="grey-text text-darken-2">Crear Rol</a></li>     
+
+@endsection
+
 @section('content')      
 
     <div class="section">
@@ -16,7 +27,7 @@
             <div id="hoverable-table">
                 <h4 class="header">Usuarios y Roles</h4>
                     <div class="row">
-                        <div class="col s12">
+                        <div class="col s12">   
                             <div class="card">
                                 <div class="card-content">
                                     <table class="highlight">
@@ -35,7 +46,7 @@
                                             <td>{{$role->slug}}</td>
                                             <td>{{$role->description}}</td>
                                             <td><a href="{{route('backoffice.role.edit',$role)}}">Editar</a></td>
-                                           
+                                        
                                             </tr>
                                             @endforeach                                      
                                         
@@ -47,10 +58,9 @@
                         </div>
                         
                     </div>
-             </div>
-
+            </div>
+        
         </div>
-
         
     </div>
 

@@ -2,7 +2,8 @@
 <html lang="es">
 
 <head>
-    <title>@yield('title')</title>
+        <title>@yield('title')</title>
+
         @include('theme.backoffice.layouts.includes.head')
 </head>
 
@@ -25,6 +26,8 @@
             <section id="content">
                 <!--start container-->
                 <div class="container">
+
+                    @include('theme.backoffice.layouts.includes.breadcrumbs')
 
                     @yield('content')
                     

@@ -52,8 +52,7 @@ class RoleController extends Controller
      */
     public function store(StoreRequest $request, Role $role)
     {
-         $role = $role->store($request);      
-
+         $role = $role->store($request);
          //return view('theme.backoffice.pages.role.create');
          return redirect()->route('backoffice.role.show',$role);
         //dd($request);
@@ -112,7 +111,7 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {    
             $role->delete();
-            alert('Title','Lorem Lorem Lorem', 'success')->showConfirmButton('Ok');
+            alert('Éxito','Rol eliminado', 'success')->showConfirmButton('Ok');
             return redirect()->route('backoffice.role.index');
 
             

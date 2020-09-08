@@ -1,10 +1,21 @@
 @extends('theme.backoffice.layouts.admin')
 
-@section('title','Página demo')
+@section('title','Crear Rol')
     
 @section('head')
+@endsection
+
+@section('breadcrumbs')  
+{{--<li><a href=""></a></li>--}} 
+<li><a href="{{route ('backoffice.role.index')}}">Roles del Sistema</a></li> 
+@endsection
+
+@section('dropdown_settings')
+{{--<li><a href="{{route ('backoffice.role.index')}}">Roles del Sistema</a></li> --}}
+<li><a href="{{route ('backoffice.role.create')}}">Crear Rol</a></li>     
 
 @endsection
+
 @section('content')
 
         <div class="section">
