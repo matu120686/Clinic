@@ -6,6 +6,7 @@ use App\Role;
 use Illuminate\Http\Request;
 use App\Http\Requests\Role\StoreRequest;
 use App\Http\Requests\Role\UpdadateRequest;
+use App\Permission;
 
 class RoleController extends Controller
 {
@@ -64,11 +65,12 @@ class RoleController extends Controller
      * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(Role $role)
+    public function show(Role $role )
     {
         
         return view('theme.backoffice.pages.role.show',[
             'role' => $role,
+            'permissions' => $role->permissions
         ]);
     }
 

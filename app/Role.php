@@ -28,7 +28,8 @@ class Role extends Model
 
     public function store($request){
         
-        $slug = str_slug($request->name,' - ');
+        $slug = str_slug($request->name,'-');
+
         alert('Exito','Se registró correctamente', 'success')->showConfirmButton('Ok');       
 
         return self::create($request->all() + [

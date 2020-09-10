@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Permission extends Model
 {
     //
-    protected $filable = [
+    protected $fillable = [
 
-        'name','slug','description'
+        'name','slug','description','role_id'
     ];
 
     //RELACIONES
@@ -25,6 +25,17 @@ class Permission extends Model
     }
 
     //ALMACENAMIENTO
+
+    public function store($request){
+
+        $slug = str_slug($request->name,'-');
+
+        alert('Exito','Se registró correctamente', 'success')->showConfirmButton('Ok');       
+
+        return self::create($request->all() + [
+            'slug' => $slug, 
+        ] );
+    }
 
     //VALIDACION
 

@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+//use App\Role;
+use App\Role;
 use App\Permission;
 use Illuminate\Http\Request;
+use App\Http\Requests\Permission\StoreRequest;
 
 class PermissionController extends Controller
 {
@@ -14,7 +16,10 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        //
+        return view('theme.backoffice.pages.permission.index',[
+            'permissions' => Permission::all()
+        ]);
+        
     }
 
     /**
@@ -22,9 +27,12 @@ class PermissionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create( )
     {
-        //
+        return view('theme.backoffice.pages.permission.create',[
+            'roles' => Role::all()
+
+        ]);
     }
 
     /**
@@ -33,9 +41,14 @@ class PermissionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request, Permission $permission)
     {
-        //
+        $permission = $permission->store($request);
+
+         return redirect()->route('backoffice.permission.show',$permission); //envia los datos el metodo show
+        //dd($permission);
+       
+      
     }
 
     /**
@@ -46,7 +59,12 @@ class PermissionController extends Controller
      */
     public function show(Permission $permission)
     {
-        //
+        //$role = $permission->role();
+        
+        return view('theme.backoffice.pages.permission.show', [
+            'permission' => $permission,
+            //'role' =>$role 
+        ]);
     }
 
     /**
@@ -57,7 +75,10 @@ class PermissionController extends Controller
      */
     public function edit(Permission $permission)
     {
-        //
+        return view('theme.backoffice.pages.permission.edit',[
+            'permission'=> $permission,
+            'roles' => Role::all()
+        ]);
     }
 
     /**
@@ -80,6 +101,9 @@ class PermissionController extends Controller
      */
     public function destroy(Permission $permission)
     {
-        //
+        $role = $permission->role; 
+        $permission->delete();
+        alert('Éxito','El permiso fue eliminado','success')->showConfirmButton();
+        return redirect()->route('backoffice.role.show',$role);
     }
 }
