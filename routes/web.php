@@ -14,6 +14,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth' ], 'as' => 'backoffice.'], function(){
 
     //Route::get('/role', 'RoleController@index')->name('role.index');
+    Route::resource('user', 'UserController');
 
     Route::resource('role', 'RoleController');
 
