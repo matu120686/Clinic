@@ -46,9 +46,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return view('theme.backoffice.pages.user.show',[
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -84,4 +86,19 @@ class UserController extends Controller
     {
         //
     }
+
+    /*
+        MOSTRAR FORMULARIO PARA ASIGNAR ROL
+    */
+    public function assign_role(){
+        
+    }
+    /*
+        ASIGNAR LOS ROLES EN LA BASE DE DATOS
+    */
+    public function role_assignmet(){
+
+    }
+
+
 }

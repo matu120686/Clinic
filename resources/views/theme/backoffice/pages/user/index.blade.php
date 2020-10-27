@@ -41,15 +41,12 @@
                                         </thead>
                                         <tbody>              
                                             @foreach ($users as $user)
-                                            <tr>                           
-                                            <td><a href="{{route('backoffice.user.show', $user)}}">{{$user->name}}</a></td>
-                                            <td>{{$user->dob}}</td>
-                                            <td>{{$user->email}}</td>
-                                            <td><a href="{{route('backoffice.user.edit', $user)}}">Editar</a></td>
-
-
-                                        
-                                            </tr>
+                                                <tr>                           
+                                                    <td><a href="{{route('backoffice.user.show', $user)}}">{{$user->name}}</a></td>
+                                                    <td>{{$user->dob}}</td>
+                                                    <td>{{$user->email}}</td>
+                                                    <td><a href="{{route('backoffice.user.edit', $user)}}">Editar</a></td>                                            
+                                                </tr>
                                             @endforeach                                      
                                         
                                         
